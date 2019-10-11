@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import os
 import argparse
 import pandas as pd
-import yaml
+import ruamel.yaml
 
 parser = argparse.ArgumentParser(description="")
 parser.add_argument("-ptr", "--pathresults", help="")
@@ -167,12 +167,12 @@ def create_inner_outer_csv():
     for hiob_execution in hiob_executions:
 
         # get inner outer
-        with open(os.path.join(hiob_execution, "tracker.yaml"), "r") as stream:
-            try:
-                configuration = yaml.safe_load(stream)
-                scale_estimator_conf = configuration["scale_estimator"]
-            except yaml.YAMLError as exc:
-                print(exc)
+        with open(os.path.join(hiob_execution, "tracker.yaml"), "r") as yf:
+
+            yaml = ruamel.yaml.YAML()
+
+            configuration = yaml.load(yf)
+            scale_estimator_conf = configuration["scale_estimator"]
 
             inner = configuration["scale_estimator"]["inner_punish_threshold"]
             outer = configuration["scale_estimator"]["outer_punish_threshold"]
