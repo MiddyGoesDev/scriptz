@@ -3,3 +3,6 @@ ruamel.yaml
 numpy
 matplotlib
 pandas
+opencv-python
+zipfile36
+

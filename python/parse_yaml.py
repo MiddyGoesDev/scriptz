@@ -1,19 +1,15 @@
-import argparse
 import ruamel.yaml
 import os
 import sys
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-yf", "--yaml_file", dest="yaml_file", required=True)
-args = parser.parse_args()
-
-
-yaml = ruamel.yaml.YAML()
-
 
 def main():
-    if os.path.exists(args.yaml_file) and ".yaml" in args.yaml_file:
-        with open(args.yaml_file) as yf:
+
+    yaml_path = "/data/5rietz/ROOT_HIOB/hiob_logs/hiob-execution-wtmpc30-2019-10-09-20.12.39.959490/tracker.yaml"
+    yaml = ruamel.yaml.YAML()
+
+    if os.path.exists(yaml_path) and ".yaml" in yaml_path:
+        with open(yaml_path) as yf:
             yaml_dict = yaml.load(yf)
             yaml.dump(yaml_dict, sys.stdout)
 
