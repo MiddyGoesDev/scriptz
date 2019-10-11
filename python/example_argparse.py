@@ -17,7 +17,7 @@ parser.add_argument("-se", "--use_se", dest="use_se", action="store_true")
 parser.add_argument("-no_se", "--dont_use_se", dest="use_se", action="store_false")
 
 # another dummy
-parser.add_argument("-s", "--silent", dest="silent", action="store_true
+parser.add_argument("-s", "--silent", dest="silent", action="store_true")
 
 # set default values for destinations
 parser.set_defaults(silent=False, use_se=False)
