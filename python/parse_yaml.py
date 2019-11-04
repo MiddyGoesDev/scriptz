@@ -9,10 +9,17 @@ def main():
     yaml = ruamel.yaml.YAML()
 
     if os.path.exists(yaml_path) and ".yaml" in yaml_path:
-        with open(yaml_path) as yf:
-            yaml_dict = yaml.load(yf)
-            yaml.dump(yaml_dict, sys.stdout)
-
+        # load yaml file into ordereddict
+        with open(yaml_path) as f:
+            yaml_file = yaml.load(f)
+            
+            # dome some processing
+            yaml_file["some_key"] = "some_vale
+            
+           
+        # overwrite the old yaml file with the loaded, manipulated new dict
+        with open(yaml_path, 'w') as f:
+            yaml.dump(yaml_file, f)
 
 if __name__ == '__main__':
     main()
