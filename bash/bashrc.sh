@@ -12,6 +12,9 @@ PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
 # https://www.rrz.uni-hamburg.de/services/netz/vpn/vpn-linux.html
 PATH=$PATH:"/opt/cisco/anyconnect/bin"
 
+# anaconda navigator
+alias nav="anaconda-navigator"
+
 # color ls ouput
 alias ls="ls --color=auto"
 
