@@ -5,8 +5,12 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PA
 export PYTHONPATH=/usr/local/cuda-9.0/lib64${PYTHONPATH:+:${PYTHONPATH}}
 
 # add folders to path:
-export PATH=/informatik2/students/home/5rietz/pycharm-2019.1.3/bin${PATH:+:${PATH}}
-export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
+PATH=/informatik2/students/home/5rietz/pycharm-2019.1.3/bin${PATH:+:${PATH}}
+PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
+
+# for uhh vpn
+# https://www.rrz.uni-hamburg.de/services/netz/vpn/vpn-linux.html
+PATH=$PATH:"/opt/cisco/anyconnect/bin"
 
 # color ls ouput
 alias ls="ls --color=auto"
