@@ -10,7 +10,7 @@ PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
 
 # for uhh vpn
 # https://www.rrz.uni-hamburg.de/services/netz/vpn/vpn-linux.html
-PATH=$PATH:"/opt/cisco/anyconnect/bin"
+alias univpn="/opt/cisco/anyconnect/bin/vpnui"
 
 # anaconda navigator
 alias nav="anaconda-navigator"
