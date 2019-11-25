@@ -1,5 +1,5 @@
 #!/bin/bash
-#use like: rsync_all_ext.ssh -s '/some/source/folder' -d '/some/dest/folder' -e 'some.extension'
+#use like: ./rsync_all_ext.ssh -s '/some/source/folder' -d '/some/dest/folder' -e 'some.extension'
 
 
 # create named arguments
