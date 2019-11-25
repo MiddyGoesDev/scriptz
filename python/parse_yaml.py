@@ -3,7 +3,7 @@ from ruamel.yaml.scalarstring import DoubleQuotedScalarString as dq
 import os
 
 # for correctly storing list in yaml.
-def L(*l):
+def yaml_list(*l):
    ret = ruamel.yaml.comments.CommentedSeq(l)
    ret.fa.set_flow_style()
    return ret
@@ -23,7 +23,7 @@ def main():
             yaml_file["some_key"] = "some_vale"
             
             # store list in yaml like value: ["abc", "dfg"]
-            yaml_file["some_other_key"] = L(100, 100)
+            yaml_file["some_other_key"] = yaml_list(100, 100)
             
             # store list in yaml like value: 
             #                            - "abc"
