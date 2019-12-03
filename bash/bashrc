@@ -31,6 +31,9 @@ alias lss="ls -Ssha --color=auto"
 # --ignore-existing prevents files from being copied over that already exist on the the destination
 alias rsync="rsync -avzh --info=progress2 --ignore-existing"
 
+# always use rsync over cp...
+alias cp="rsync -avzh --info=progress2 --ignore-existing"
+
 # use find to delete all files in all subdirectories with the given name
 fd() {
 	if [ $# -eq 1 ]
