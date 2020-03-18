@@ -79,7 +79,7 @@ then
 fi
 
 echo ""
-echo "Got the following argument values):"
+echo "Got the following argument values:"
 echo "USER: $USER"
 echo "ACCESS: $ACCESS"
 echo "OP: $OP"
