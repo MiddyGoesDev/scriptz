@@ -19,6 +19,12 @@
 # |										     |	
 # |	@author: Finn Rietz							     |	
 # -------------------------------------------------------------------------------------
+echo ""
+echo "Following arguments can be given:"
+echo "    + user=\"username\": User to make oner of file/dir. Default \$user"
+echo "    + access=\"[ugoa]\": The access type to change with chmod. Default \"a\""
+echo "    + op=\"[+-=]\": The operation for permission manipulation for chmod. Default \"+\""
+echo "    + dir=\"path/to/file\": Required, the dir/file to which the changes are applied. Can also be given as single, unnamed argument" 
 
 for ARGUMENT in "$@"
 do
@@ -73,7 +79,7 @@ then
 fi
 
 echo ""
-echo "Got the following argument values (may be partially set default):"
+echo "Got the following argument values):"
 echo "USER: $USER"
 echo "ACCESS: $ACCESS"
 echo "OP: $OP"
@@ -87,9 +93,19 @@ echo "sudo chmod -R $ACCESS$OP$PERMS $TARGET_DIR"
 echo ""
 
 sudo chown -R $USER $TARGET_DIR
-sudo chmod -R $ACCESS$OP$PERMS $TARGET_DIR
+if [ ! $? -eq 0 ]; then
+	echo "Looks like chown call failed, exiting."
+	exit 1
+fi
 
-echo "Done"
-echo ""
+sudo chmod -R $ACCESS$OP$PERMS $TARGET_DIR
+if [ $? -eq 0 ]; then
+	echo "Done"
+	exit 0
+else
+	echo "Looks like chmod call failed, exiting."
+	exit 1
+fi
+
 exit 0
 
