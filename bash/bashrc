@@ -26,6 +26,9 @@ alias myip="curl http://ipecho.net/plain; echo"
 # sort by size all files in human readable format
 alias lss="ls -Ssha --color=auto"
 
+# sorts by date modified 
+alias lt='ls -t'
+
 # -a archive mode: preserve permissions, ownership, edit times etc
 # -v verbose output
 # -z compression during transer
